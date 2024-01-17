@@ -1,0 +1,54 @@
+name: Print Diamond
+
+on:
+  workflow_dispatch:
+    inputs:
+      midpoint:
+        type: choice
+        description: Midpoint
+        options: 
+        - A
+        - B
+        - C
+        - D
+        - E
+        - F
+        - G
+        - H
+        - I
+        - J
+        - K
+        - L
+        - M
+        - N
+        - O
+        - P
+        - Q
+        - R
+        - S
+        - T
+        - U
+        - V
+        - W
+        - X
+        - Y
+        - Z
+jobs:
+
+  print:
+
+    runs-on: windows-latest  
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+
+    - name: Execute
+      run: dotnet run ${{ github.event.inputs.midpoint }}
