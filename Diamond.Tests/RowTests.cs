@@ -12,6 +12,15 @@ public class RowTests
     }
 
     [Fact]
+    public void Test_Row_C_d_5_no_whitespace()
+    {
+        var row = new Row('C', 5, false);
+        var expected = "C   C";
+
+        Assert.Equal(expected, row.ToString());
+    }
+
+    [Fact]
     public void Test_Row_C_d_7()
     {
         var row = new Row('C', 7, true);
