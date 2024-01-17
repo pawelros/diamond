@@ -39,6 +39,15 @@ public class RowTests
     }
 
     [Fact]
+    public void Test_Row_A_d_1()
+    {
+        var row = new Row('A', 1, true);
+        var expected = "A";
+
+        Assert.Equal(expected, row.ToString());
+    }
+
+    [Fact]
     public void Test_Row_A_d_5()
     {
         var row = new Row('A', 5, true);
@@ -52,6 +61,24 @@ public class RowTests
     {
         var row = new Row('A', 7, true);
         var expected = "___A___";
+
+        Assert.Equal(expected, row.ToString());
+    }
+
+    [Fact]
+    public void Test_Row_G_d_13()
+    {
+        var row = new Row('G', 13, true);
+        var expected = "G___________G";
+
+        Assert.Equal(expected, row.ToString());
+    }
+
+        [Fact]
+    public void Test_Row_B_d_13()
+    {
+        var row = new Row('B', 13, true);
+        var expected = "_____B_B_____";
 
         Assert.Equal(expected, row.ToString());
     }

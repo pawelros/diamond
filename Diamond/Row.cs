@@ -16,7 +16,20 @@ namespace Diamond
 
         public override string ToString()
         {
-            return base.ToString();
+            int distanceFromTheEndge = (this.TotalDepth - 1) / 2 - (this.CurrentCharacter - 'A');
+            int innerPadding = this.TotalDepth - distanceFromTheEndge * 2 - 2;
+
+            if (this.isTipOfDiamond())
+            {
+                return $"{new string(this._whitespace, distanceFromTheEndge)}{this.CurrentCharacter}{new string(this._whitespace, distanceFromTheEndge)}";
+            }
+
+            return $"{new string(this._whitespace, distanceFromTheEndge)}{this.CurrentCharacter}{new string(this._whitespace, innerPadding)}{this.CurrentCharacter}{new string(this._whitespace, distanceFromTheEndge)}";
+        }
+
+        private bool isTipOfDiamond()
+        {
+            return this.CurrentCharacter == 'A';
         }
     }
 }
