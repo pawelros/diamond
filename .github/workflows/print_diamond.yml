@@ -51,4 +51,5 @@ jobs:
         dotnet-version: 7.0.x
 
     - name: Execute
+      working-directory: Diamond
       run: dotnet run ${{ github.event.inputs.midpoint }}
