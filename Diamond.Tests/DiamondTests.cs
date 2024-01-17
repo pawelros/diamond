@@ -3,6 +3,12 @@ namespace Diamond.Tests;
 public class DiamondTests
 {
     [Fact]
+    public void Test_Invalid_Input()
+    {
+        Assert.Throws<ArgumentException>(() => new Diamond('1'));
+    }
+
+    [Fact]
     public void Test_Depth_A()
     {
         var diamond = new Diamond('A');
